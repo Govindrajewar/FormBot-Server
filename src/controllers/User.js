@@ -12,7 +12,7 @@ const signupUser = async (req, res) => {
       password: encryptedPassword,
     });
 
-    res.json({
+    res.status(201).json({
       status: "SUCCESS",
       message: "User Signed Up successfully",
     });
@@ -51,7 +51,7 @@ const loginUser = async (req, res) => {
       expiresIn: 6000,
     });
 
-    res.json({
+    res.status(201).json({
       status: "SUCCESS",
       message: "User Logged in Successfully",
       token: jwToken,
