@@ -55,6 +55,7 @@ const loginUser = async (req, res) => {
       status: "SUCCESS",
       message: "User Logged in Successfully",
       token: jwToken,
+      user: user,
     });
   } catch (error) {
     res.json({
