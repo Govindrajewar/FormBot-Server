@@ -10,11 +10,7 @@ const itemSchema = new mongoose.Schema({
 
 const FormData = mongoose.model("FormData", {
   formName: String,
-  user: {
-    userId: String,
-    username: String,
-    email: String,
-  },
+  user: String,
   itemList: [itemSchema],
 });
 
