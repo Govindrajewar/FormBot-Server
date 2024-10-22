@@ -16,17 +16,16 @@ app.use(formDataRoutes);
 app.get("/", (req, res) => {
   res.json({
     message: "Welcome to the FormBot Server",
-    Version: "0.03",
-    Date: `${new Date().getDate()}-${new Date().getMonth()}-${new Date().getFullYear()}`,
-    Time: `${
-      new Date().getHours() % 12
-    }:${new Date().getMinutes()}:${new Date().getSeconds()}`,
+    Version: "0.2",
+    Date: `${new Date().getDate()}-${
+      new Date().getMonth() + 1
+    }-${new Date().getFullYear()}`,
   });
 });
 
 app.listen(process.env.PORT, () => {
   mongoose
     .connect(process.env.MONGODB_URL)
-    .then(() => console.log("Server is running & Connected to Database"))
+    .then(() => console.log("Server is Connected to Database"))
     .catch((err) => console.error("MongoDB connection error: ", err));
 });
