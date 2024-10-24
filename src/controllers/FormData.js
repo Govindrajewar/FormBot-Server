@@ -37,8 +37,18 @@ const deleteFormData = async (req, res) => {
   }
 };
 
+const getCurrentFormData = async (req, res) => {
+  try {
+    let data = await FormData.findOne({ _id: req.params.currentFormId });
+    res.status(200).json(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   setFormData,
   getFormData,
   deleteFormData,
+  getCurrentFormData,
 };

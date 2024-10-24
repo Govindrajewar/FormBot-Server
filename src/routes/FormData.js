@@ -5,11 +5,14 @@ const {
   setFormData,
   getFormData,
   deleteFormData,
+  getCurrentFormData,
 } = require("../controllers/FormData.js");
 
 router.post("/dynamic-items", setFormData);
 
 router.get("/formdata", getFormData);
+
+router.get("/viewForm/:currentFormId", getCurrentFormData);
 
 router.delete("/formdata/:formName", deleteFormData);
 
