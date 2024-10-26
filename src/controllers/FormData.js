@@ -26,8 +26,8 @@ const getFormData = async (req, res) => {
 
 const deleteFormData = async (req, res) => {
   try {
-    const formName = req.params.formName;
-    const result = await FormData.deleteOne({ formName });
+    const currentFormId = req.params.currentFormId;
+    const result = await FormData.deleteOne({ _id: currentFormId });
     if (result.deletedCount === 0) {
       return res.status(404).send("Form not found");
     }

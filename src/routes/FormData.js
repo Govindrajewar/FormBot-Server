@@ -14,6 +14,6 @@ router.get("/formdata", getFormData);
 
 router.get("/viewForm/:currentFormId", getCurrentFormData);
 
-router.delete("/formdata/:formName", deleteFormData);
+router.delete("/formdata/:currentFormId", deleteFormData);
 
 module.exports = router;
