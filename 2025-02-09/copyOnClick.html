@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="sectionToCopy">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima magni omnis nam commodi
+        nihil et, non, voluptate quaerat vitae velit iusto inventore sunt ipsam? Commodi, facilis libero! Eum blanditiis
+        unde dolore dolor vero exercitationem possimus repudiandae aliquam, accusantium nemo ex dicta ut mollitia odit
+        praesentium reiciendis laborum saepe dolores? Necessitatibus!</div>
+
+    <button id="copyButton" onclick="
+    copySelectedText()
+    ">Copy Text</button>
+
+    <script>
+        function copySelectedText() {
+            var text = document.getElementById("sectionToCopy").innerText;
+            // console.log(text);
+
+            var copyBtn = document.getElementById("copyButton");
+
+            copyBtn.addEventListener("click", () => {
+                navigator.clipboard.writeText(text);
+            })
+            alert("Text Copied");
+        }
+    </script>
+
+</body>
+
+</html>

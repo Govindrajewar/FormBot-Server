@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Decrement</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body contenteditable="">
+
+    <h1>Current Value: <span id="counterValue"></span></h1>
+
+    <button type="button" id="incrementBtn">Increment</button>
+
+    <button type="button" id="decrementBtn">Decrement</button>
+
+
+    <script>
+        let counter = 0;
+
+        const counterValue = document.getElementById("counterValue");
+        const incrementBtn = document.getElementById("incrementBtn");
+        const decrementBtn = document.getElementById("decrementBtn");
+
+        counterValue.textContent = counter;
+
+        incrementBtn.addEventListener("click", () => {
+            counter++;
+            counterValue.textContent = counter;
+        })
+
+        decrementBtn.addEventListener("click", () => {
+            counter--;
+            counterValue.textContent = counter;
+        })
+
+
+    </script>
+
+</body>
+
+</html>
