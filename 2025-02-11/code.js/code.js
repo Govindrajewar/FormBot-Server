@@ -6,16 +6,43 @@ Amit Kumar
 condition:
 1. do not use any inbuilt function like join, split or reverse.
 2. Time complexity should be O(n)
-
 */
 
-let str = "This is Govind.";
+function reverseWords(sentence) {
+  let result = "";
+  let word = "";
 
-let reversedString = "";
+  for (let i = 0; i < sentence.length; i++) {
+    let char = sentence[i];
 
-for (let i = str.length - 1; i >= 0; i--) {
-  reversedString = reversedString + str[i];
+    if (char === " " || i === sentence.length - 1) {
+      if (i === sentence.length - 1) word += char; // Add last character if not space
+      for (let j = word.length - 1; j >= 0; j--) {
+        result += word[j];
+      }
+      result += char === " " ? " " : ""; // Preserve spaces
+      word = ""; // Reset word
+    } else {
+      word += char;
+    }
+  }
 
+  return result;
 }
 
-console.log("reversedString: ", reversedString);
+// Example Usage
+console.log(reverseWords("This is Govind."));
+
+/*
+// print a -> b -> c
+console.log("a");
+
+let isBPrinted = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("b");
+    resolve();
+  }, 1000);
+});
+
+isBPrinted.then(() => console.log("c")).catch((e) => console.log(e));
+*/
